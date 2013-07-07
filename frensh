@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Frensh is a french shell, that does not really know how to communicate.
+
+import subprocess
+import sys
+import os
+
+try:
+    import readline
+    import rlcompleter
+except ImportError:
+    pass
+else:
+    readline.parse_and_bind("tab: complete")
+
+BRED = '\033[1;91m'
+BBLUE = '\033[1;34m'
+BWHITE = '\033[1;37m'
+END = '\033[0m'
+PROMPT = u'₣ '
+
+
+def colorize_ps1(prompt, i):
+    """ Colorize the prompt in blue, white or red """
+    if i % 3 == 0:
+        ps1 = BBLUE + prompt + END
+    elif i % 3 == 1:
+        ps1 = BWHITE + prompt + END
+    else:
+        ps1 = BRED + prompt + END
+    return ps1
+
+
+def main():
+    """ Run the frensh REPL """
+    i = 0
+    while True:
+        ps1 = colorize_ps1(PROMPT, i)
+        try:
+            if sys.version_info.major == 2:
+                command = raw_input(ps1.encode('utf-8'))
+            else:
+                command = input(ps1)
+        except (SystemExit, KeyboardInterrupt, EOFError):
+            sys.stderr.write("\nRun away!\n")
+            exit()
+        else:
+            if command == 'putain':
+                subprocess.call(os.environ['SHELL'], shell=True)
+            else:
+                shell_cmd = subprocess.Popen(
+                    command, shell=True,
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                out, err = shell_cmd.communicate()
+                if err:
+                    sys.stderr.write("Fetchez la vache!\n")
+                elif out:
+                    sys.stdout.write("I'm french.\n")
+        finally:
+            i += 1
+
+if __name__ == '__main__':
+    main()
