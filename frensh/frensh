@@ -21,7 +21,7 @@ BRED = '\033[1;91m'
 BBLUE = '\033[1;34m'
 BWHITE = '\033[1;37m'
 END = '\033[0m'
-PROMPT = u'₣ '
+PROMPT = u'₣ '  # Franc symbol
 
 
 def colorize_ps1(prompt, i):
@@ -42,6 +42,7 @@ def get_alt_shell():
     else:
         return os.environ['SHELL']
 
+
 def main():
     """ Run the frensh REPL """
     i = 0
@@ -57,10 +58,12 @@ def main():
             exit()
         else:
             if command.lower() == 'putain':
-                # If you complain, your default shell will open into frensh
+                # If you complain, an alt shell will open into frensh
                 subprocess.call(get_alt_shell(), shell=True)
+                sys.stdout.write('Run away!\n')
             elif command.lower() == "i'm french":
-                webbrowser.open('https://www.youtube.com/watch?feature=player_detailpage&v=9lIj3odAujQ#t=30s')
+                webbrowser.open(
+                    'https://www.youtube.com/watch?feature=player_detailpage&v=9lIj3odAujQ#t=30s')
             else:
                 shell_cmd = subprocess.Popen(
                     command, shell=True,
