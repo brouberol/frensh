@@ -53,7 +53,7 @@ def main():
                 # If you complain, your default shell will open into frensh
                 subprocess.call(os.environ['SHELL'], shell=True)
             elif command.lower() == "i'm french":
-                webbrowser.open('https://www.youtube.com/watch?v=9lIj3odAujQ')
+                webbrowser.open('https://www.youtube.com/watch?feature=player_detailpage&v=9lIj3odAujQ#t=30s')
             else:
                 shell_cmd = subprocess.Popen(
                     command, shell=True,
