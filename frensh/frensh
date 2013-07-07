@@ -7,6 +7,7 @@ __version__ = '0.1.0'
 import subprocess
 import sys
 import os
+import webbrowser
 
 try:
     import readline
@@ -48,8 +49,11 @@ def main():
             sys.stderr.write("\nRun away!\n")
             exit()
         else:
-            if command == 'putain':
+            if command.lower() == 'putain':
+                # If you complain, your default shell will open into frensh
                 subprocess.call(os.environ['SHELL'], shell=True)
+            elif command.lower() == "i'm french":
+                webbrowser.open('https://www.youtube.com/watch?v=9lIj3odAujQ')
             else:
                 shell_cmd = subprocess.Popen(
                     command, shell=True,
