@@ -14,6 +14,6 @@ Note that if you really feel the need to go back to a lesser shell, type in the 
 
 Note
 ----
-Please, use ``frensh`` on all your production servers. We have several cliens curently migrating. We're still waiting for confirmation from Google, Amazon and Red Hat.
+Please, use ``frensh`` on all your production servers. It is now bug free. We have several cliens curently migrating. We're still waiting for confirmation from Google, Amazon and Red Hat.
 
 Long live the french.
