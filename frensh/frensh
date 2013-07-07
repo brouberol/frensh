@@ -64,6 +64,9 @@ def main():
             elif command.lower() == "i'm french":
                 webbrowser.open(
                     'https://www.youtube.com/watch?feature=player_detailpage&v=9lIj3odAujQ#t=30s')
+            elif command.lower() == 'exit':
+                sys.stderr.write("Run away!\n")
+                exit()
             else:
                 shell_cmd = subprocess.Popen(
                     command, shell=True,
