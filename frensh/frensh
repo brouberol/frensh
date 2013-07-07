@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 # Frensh is a french shell, that does not really know how to communicate.
 
+__version__ = '0.1.0'
+
 import subprocess
 import sys
 import os
