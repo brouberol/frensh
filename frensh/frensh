@@ -63,7 +63,7 @@ def main():
                 sys.stdout.write('Run away!\n')
             elif command.lower() == "i'm french":
                 webbrowser.open(
-                    'https://www.youtube.com/watch?feature=player_detailpage&v=9lIj3odAujQ#t=30s')
+                    'https://www.youtube.com/watch?v=9lIj3odAujQ#t=30s')
             elif command.lower() == 'exit':
                 sys.stderr.write("Run away!\n")
                 exit()
@@ -73,9 +73,9 @@ def main():
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 out, err = shell_cmd.communicate()
                 if err:
-                    sys.stderr.write("Fetchez la vache!\n")
+                    sys.stderr.write("Fetchez la vache !\n")
                 elif out:
-                    sys.stdout.write("I'm french.\n")
+                    sys.stdout.write("I'm french\n")
         finally:
             i += 1
 
