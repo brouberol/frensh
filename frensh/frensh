@@ -62,8 +62,7 @@ def main():
                 subprocess.call(get_alt_shell(), shell=True)
                 sys.stdout.write('Run away!\n')
             elif command.lower() == "i'm french":
-                webbrowser.open(
-                    'https://www.youtube.com/watch?v=9lIj3odAujQ#t=30s')
+                webbrowser.open('://www.youtube.com/watch?v=VUBdbfGLTEU')
             elif command.lower() == 'exit':
                 sys.stderr.write("Run away!\n")
                 exit()
